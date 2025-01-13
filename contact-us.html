@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Us</title>
   </head>
   <body>
-    <h1>Contact us</h1>
+    <h1>Contact Us</h1>
     <form id="contactForm">
       <label for="name">Name:</label>
       <input
@@ -16,6 +16,8 @@
         placeholder="Enter your name"
         required
       />
+      <br />
+
       <label for="email">Email:</label>
       <input
         type="email"
@@ -24,23 +26,46 @@
         placeholder="Enter your email"
         required
       />
-      <p>Hobbies</p>
-      <input type="checkbox" id="reading" name="hobbies" value="reading" />
-      <label for="reading">Reading</label>
       <br />
+
+      <p>Gender:</p>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label><br />
+
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br />
+
+      <input type="radio" id="other" name="gender" value="other" />
+      <label for="other">Other</label><br />
+
+      <input type="date" id="birthday" name="birthday" />
+      <label for="birthday">Birthday:</label>
+      <p>Hobbies:</p>
+      <input type="checkbox" id="reading" name="hobbies[]" value="reading" />
+      <label for="reading">Reading</label><br />
+
       <input
         type="checkbox"
         id="travelling"
-        name="hobbies"
+        name="hobbies[]"
         value="travelling"
       />
-      <label for="travelling">Travelling</label>
+      <label for="travelling">Travelling</label><br />
+
+      <input type="checkbox" id="gaming" name="hobbies[]" value="gaming" />
+      <label for="gaming">Gaming</label><br />
+      <label for="cars">Choose a car:</label>
       <br />
-      <input type="checkbox" id="gaming" name="hobbies" value="gaming" />
-      <label for="gaming">Gaming</label>
-      <br />
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+      <button type="reset">Reset</button>
       <button type="submit">Submit</button>
     </form>
+
     <script>
       const form = document.getElementById("contactForm");
 
@@ -49,22 +74,34 @@
 
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
-
+        const gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        const dob = document.getElementById("birthday").value;
         const hobbies = [];
         document
-          .querySelectorAll('input[name="hobbies"]:checked')
+          .querySelectorAll('input[name="hobbies[]"]:checked')
           .forEach((checkbox) => {
             hobbies.push(checkbox.value);
           });
+        const vehicle = document.getElementById("cars").value;
 
         const formData = {
           name: name,
           email: email,
+          gender: gender,
+          dob: dob,
           hobbies: hobbies,
+          vehicles: vehicle,
         };
 
         console.log("Form Data:", formData);
 
+        form.reset();
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
         form.reset();
       });
     </script>
