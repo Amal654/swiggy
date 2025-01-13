@@ -1,0 +1,144 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 80px;
+    color: #282c3f;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.pb-8 {
+    padding-bottom: 80px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+    padding-left: 80px;
+    padding-right: 80px;
+    z-index: 1000;
+}
+
+.logo {
+    display: block;
+}
+
+.header .header-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    max-width: 300px;
+    color: #3d4152;
+    font-size: 16px;
+    font-weight: 500;
+    height: 30px;
+    cursor: pointer;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.header-right a  {
+  text-decoration: none;
+  color: #3d4152;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 50px;
+}
+
+.header-right i {
+    padding-right: 8px;
+}
+
+.header a:hover {
+    color: #ff5200;
+}
+
+section {
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.scroll-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll-top .scroll-btn i {
+    background: gray;
+    padding:8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.scroll-top .scroll-btn i:hover {
+    background: rgb(218, 215, 215);
+}
+.slider {
+    width: 1000px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.slider .slid-itm {
+    width: 200px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-area: 20px;
+    flex: none;
+}
+
+.slider img {
+    width: 150px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: center;
+    gap: 12px;
+}
+
+.item-card img {
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+.item-card .fa-star {
+    background: rgb(3, 150, 101);
+    color: #fff;
+    padding: 4px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+
+
+
+
