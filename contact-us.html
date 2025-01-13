@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Contact us</h1>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+      <p>Hobbies</p>
+      <input type="checkbox" id="reading" name="hobbies" value="reading" />
+      <label for="reading">Reading</label>
+      <br />
+      <input
+        type="checkbox"
+        id="travelling"
+        name="hobbies"
+        value="travelling"
+      />
+      <label for="travelling">Travelling</label>
+      <br />
+      <input type="checkbox" id="gaming" name="hobbies" value="gaming" />
+      <label for="gaming">Gaming</label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        const hobbies = [];
+        document
+          .querySelectorAll('input[name="hobbies"]:checked')
+          .forEach((checkbox) => {
+            hobbies.push(checkbox.value);
+          });
+
+        const formData = {
+          name: name,
+          email: email,
+          hobbies: hobbies,
+        };
+
+        console.log("Form Data:", formData);
+
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
