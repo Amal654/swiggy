@@ -214,3 +214,16 @@ header {
     color: #fff;
 }
 
+.form-wrapper{
+    display: grid;
+    gap: 16px;
+}
+
+.text-input{
+    min-width: 260px;
+    padding: 8px 20px;
+    border: 0.87px solid #02060C0D;
+    box-shadow: 0px 3.49px 6.98px 0px #1B1E2414;
+    border-radius: 7px;
+    font-size: 12px;
+}
