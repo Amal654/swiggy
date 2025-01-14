@@ -40,20 +40,17 @@
 
       <input type="date" id="birthday" name="birthday" />
       <label for="birthday">Birthday:</label>
+
       <p>Hobbies:</p>
       <input type="checkbox" id="reading" name="hobbies[]" value="reading" />
       <label for="reading">Reading</label><br />
 
-      <input
-        type="checkbox"
-        id="travelling"
-        name="hobbies[]"
-        value="travelling"
-      />
+      <input type="checkbox" id="travelling" name="hobbies[]"value="travelling"/>
       <label for="travelling">Travelling</label><br />
 
       <input type="checkbox" id="gaming" name="hobbies[]" value="gaming" />
       <label for="gaming">Gaming</label><br />
+
       <label for="cars">Choose a car:</label>
       <br />
       <select name="cars" id="cars">
@@ -78,12 +75,15 @@
           'input[name="gender"]:checked'
         ).value;
         const dob = document.getElementById("birthday").value;
+
         const hobbies = [];
         document
           .querySelectorAll('input[name="hobbies[]"]:checked')
           .forEach((checkbox) => {
             hobbies.push(checkbox.value);
           });
+
+          
         const vehicle = document.getElementById("cars").value;
 
         const formData = {
